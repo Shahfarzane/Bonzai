@@ -54,8 +54,18 @@ a {
   line-height: 18px;
   text-align: center;
   text-transform: uppercase;
+}
 
-  color: #040000;
+.cta__btn {
+  filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.25));
+  font-size: 1.1rem;
+  background: var(--cta-btn-color);
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 10px;
+  padding: 0.8rem;
+  border: none;
+  color: #ffffff;
 }
 .header {
   grid-area: header;
@@ -261,7 +271,7 @@ label {
   align-items: center;
 }
 
-input[type="text"] {
+.contact__from-input {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -318,16 +328,188 @@ footer h6 {
 
 .facilities__wrapper {
   max-width: 1440px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "hero hero"
+    "facilities facilities"
+    "cta cta"
+    "information information"
+    "gallery gallery"
+    "newsletter newsletter";
 }
 .facilities__hero {
   background-color: var(--primary-color);
   color: var(--secondary-color);
+  grid-area: hero;
 }
 
-.facilities__hero-heading {
+.facilities__hero--heading {
   font-weight: 700;
   font-size: 60px;
   line-height: 75px;
-  /* or 125% */
+  padding: 2rem;
   text-align: center;
+}
+
+.facilities__hero--text {
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 28px;
+  text-align: center;
+  padding: 1rem 3rem;
+}
+
+.facilities__card-container {
+  grid-area: facilities;
+  display: grid;
+  padding: 1rem 10rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10%;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.facilities__card--title {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.facilities__card--text {
+  font-weight: 300;
+  font-size: 10px;
+  line-height: 18px;
+  letter-spacing: -0.2px;
+}
+
+.cta {
+  grid-area: cta;
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  background-image: url("../img/09-night.jpg");
+  background-position: 90% 75%;
+  background-size: 30%;
+  background-repeat: no-repeat;
+  padding: 2rem;
+}
+
+.cta__heading {
+  font-size: 75px;
+  line-height: 75px;
+  text-transform: uppercase;
+}
+
+.cta__text {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  text-transform: uppercase;
+  padding: 1rem 0;
+}
+
+.cta__buttons .primary__btn:nth-of-type(1) {
+  margin-right: 2rem;
+}
+
+.information {
+  grid-area: information;
+  padding: 2rem;
+}
+.information__heading {
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.info__cards--container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5%;
+}
+
+.info-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-cards__heading {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.info-cards__text {
+  font-size: 0.6rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.facilities__gallery {
+  grid-area: gallery;
+
+  width: 1100px;
+  margin: 1rem auto;
+}
+.facilities__gallery--top {
+  display: flex;
+}
+.facilities__gallery--top img {
+  width: 25rem;
+  border-radius: 5px;
+}
+.text-wrapper {
+  margin-left: 1rem;
+}
+.facilities__gallery--heading {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.facilities__gallery--text {
+  font-size: 0.75rem;
+  padding-right: 2rem;
+}
+
+.facilities__gallery---btm {
+  display: flex;
+  margin: 1rem 0;
+}
+
+.facilities__gallery---btm img {
+  width: 43rem;
+  border-radius: 5px;
+}
+
+.facilities__gallery---btm-right {
+  margin-left: 1rem;
+}
+
+.facilities__gallery--text-right {
+  font-size: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.newsletter {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  grid-area: newsletter;
+  display: flex;
+  padding: 2rem;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.newsletter__heading {
+  font-size: 36px;
+  line-height: 40px;
+  text-transform: uppercase;
+  mix-blend-mode: normal;
+}
+.newsletter__input {
+  width: 100%;
+  padding: 1.1rem 1.5rem;
+  margin: 1rem 0;
+  border-radius: 12px;
+  border: none;
 }
