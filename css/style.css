@@ -1,0 +1,333 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,100;1,200&display=swap");
+
+:root {
+  --primary-color: #000000;
+  --secondary-color: #ffff;
+  --cta-btn-color: #dd5136;
+  --input-color: #dddbf7;
+  --btn-color: #dddbf7;
+  --btn-booking: #8e7fb1;
+  --footer-text: #fffbfb;
+  --fs-heading: 50px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #000000;
+}
+.wrapper {
+  max-width: 1440px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas:
+    "header header"
+    "hero hero"
+    "rooms rooms"
+    "facilities facilities"
+    "contact contact"
+    "footer footer";
+}
+
+.primary__btn {
+  background: var(--btn-color);
+  border-radius: 10px;
+  padding: 0.8rem;
+  border: none;
+  font-size: 1rem;
+  line-height: 18px;
+  text-align: center;
+  text-transform: uppercase;
+
+  color: #040000;
+}
+.header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--secondary-color);
+  border: 1px solid var(--primary-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.header__logo {
+  width: 12rem;
+  padding: 2rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav__items {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 18px;
+  padding: 1rem;
+}
+
+.nav__button {
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-align: center;
+  color: #ffffff;
+  background-color: var(--btn-booking);
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+}
+
+.heading__section {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 40px;
+  text-transform: uppercase;
+  padding: 1rem;
+  margin: 1rem;
+  text-align: center;
+  color: #000000;
+}
+.hero {
+  background: url("../img/02-night.jpg");
+  height: 32rem;
+  background-position: 25% 75%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: hero;
+}
+
+.hero__heading {
+  font-size: 80px;
+  color: var(--secondary-color);
+}
+
+.booking-bar {
+  width: 1010.73px;
+  background: rgba(0, 0, 0, 0.67);
+  border-radius: 10px;
+  transform: matrix(1, 0.01, -0.01, 1, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.booking-bar .form__input {
+  border: none;
+  background: #dddbf7;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+
+.booking-bar__button {
+  border: none;
+  padding: 0.8rem 1rem;
+  filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.25));
+  font-size: 0.8rem;
+  text-align: center;
+  background: var(--cta-btn-color);
+  border-radius: 10px;
+  color: var(--secondary-color);
+}
+
+.rooms {
+  grid-area: rooms;
+}
+.cards {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card__header {
+  border-radius: 12px;
+  width: 15rem;
+}
+
+.card__header-text {
+  font-weight: 800;
+  font-size: 18px;
+  padding: 1.5rem;
+  text-transform: uppercase;
+}
+.card__info {
+  padding: 1rem 4rem;
+  font-weight: 300;
+  font-size: 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.facilities {
+  grid-area: facilities;
+  padding: 6rem;
+}
+.facilities__img {
+  width: 30rem;
+  filter: drop-shadow(3px 5px 2px rgba(0, 0, 0, 0.25));
+}
+
+.facilities__text {
+  font-size: 1rem;
+  line-height: 30px;
+  color: #000000;
+  padding: 1rem;
+}
+
+.facilities__header {
+  font-size: 40px;
+  line-height: 60px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.right,
+.left {
+  padding: 1rem 3rem;
+}
+.top,
+.bottom {
+  display: flex;
+  margin: 1rem;
+}
+
+.contact {
+  grid-area: contact;
+  padding: 5rem;
+}
+
+.contact__heading {
+  font-size: 50px;
+  line-height: 75px;
+}
+
+.contact__text {
+  font-size: 1.1rem;
+  letter-spacing: 0.07em;
+  padding: 0 2rem 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+
+  align-items: baseline;
+}
+label {
+  text-transform: uppercase;
+}
+
+.contact__address-text {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.margin {
+  margin: 1rem;
+}
+.from__section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+footer {
+  grid-area: footer;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-top: 6px solid var(--btn-booking);
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.footer__logo {
+  width: 6rem;
+}
+.footer__address {
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--footer-text);
+}
+
+.footer__nav,
+.footer__about {
+  display: flex;
+  flex-direction: column;
+}
+footer h6 {
+  font-size: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+.footer__nav-items {
+  font-weight: 600;
+  font-size: 12px;
+
+  color: #ffffff;
+}
+
+.footer__about-text {
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.copyright {
+  display: flex;
+  align-items: end;
+  text-align: center;
+}
+
+/* facilities page */
+
+.facilities__wrapper {
+  max-width: 1440px;
+}
+.facilities__hero {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.facilities__hero-heading {
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 75px;
+  /* or 125% */
+  text-align: center;
+}
