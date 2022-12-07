@@ -46,6 +46,20 @@ a:active {
     "footer footer footer";
 }
 
+.menu-button-container {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+}
+/*for mobile*/
+
 .primary__btn {
   background: var(--btn-color);
   border-radius: 10px;
@@ -78,7 +92,7 @@ a:active {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .header__logo {
-  width: 12rem;
+  width: 10rem;
   padding: 2rem;
 }
 
@@ -255,14 +269,16 @@ nav {
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: auto;
+
+  gap: 1rem;
 }
 .card {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  gap: 0.8rem;
+  /* padding: 1rem; */
 }
 .card__header {
   border-radius: 12px;
@@ -287,10 +303,13 @@ nav {
   max-width: 1000px;
 }
 .facilities__img {
-  width: 30rem;
+  width: 26rem;
   filter: drop-shadow(3px 5px 2px rgba(0, 0, 0, 0.25));
 }
-
+.facilities__img--large {
+  width: 44rem;
+  filter: drop-shadow(3px 5px 2px rgba(0, 0, 0, 0.25));
+}
 .facilities__text {
   padding: 1rem 0;
 }
@@ -301,19 +320,14 @@ nav {
 }
 
 .top,
-.bottom {
+.bottom,
+.top__facilities,
+.bottom__facilities {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: auto;
   gap: 1rem;
   margin: 1rem;
-}
-
-.top {
-  grid-template-areas: "text-container text-container img-container ";
-}
-.bottom {
-  grid-template-areas: "img-container text-container text-container";
 }
 .facilities__container {
   grid-area: text-container;
@@ -321,6 +335,22 @@ nav {
 
 .facilities__img--container {
   grid-area: img-container;
+}
+.facilities__img--containerone {
+  grid-area: img-container-first;
+}
+
+.top__facilities {
+  grid-template-areas: "img-container-first text-container img-container";
+}
+.bottom__facilities {
+  grid-template-areas: "img-container img-container text-container";
+}
+.top {
+  grid-template-areas: "text-container text-container img-container ";
+}
+.bottom {
+  grid-template-areas: "img-container text-container text-container";
 }
 
 .contact {
@@ -332,6 +362,9 @@ nav {
   align-items: center;
 }
 
+.gmaps {
+  width: 16rem;
+}
 .contact__info {
   grid-area: contact-info;
 }
@@ -376,48 +409,68 @@ footer {
   color: var(--secondary-color);
   border-top: 6px solid var(--btn-booking);
   padding: 2rem;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 0.6fr 0.4fr 0.7fr 1fr;
+  grid-template-areas: "address links social about";
+  gap: 10%;
 }
 .footer__logo {
   width: 6rem;
 }
 .footer__address {
-  font-size: 13px;
+  grid-area: address;
+  font-size: 0.7rem;
   line-height: 20px;
   color: var(--footer-text);
 }
+.footer__nav {
+  grid-area: links;
+}
+.footer__nav--items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 600;
+  font-size: 0.7rem;
+  margin-top: 2rem;
+}
+.footer__nav--links {
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+}
 
-.footer__nav,
 .footer__about {
   display: flex;
   flex-direction: column;
+  grid-area: about;
 }
 footer h6 {
   font-size: 1rem;
   text-align: center;
   text-transform: uppercase;
 }
-.footer__nav-items {
-  font-weight: 600;
-  font-size: 12px;
-
-  color: #ffffff;
-}
 
 .footer__about-text {
-  padding: 2.5rem;
+  padding: 1.5rem;
   text-align: center;
+  font-size: 0.7rem;
+  line-height: 20px;
 }
 
 .copyright {
   display: flex;
   align-items: end;
   text-align: center;
+  justify-content: center;
+  grid-area: social;
 }
 
+.footer__copyright--text {
+  font-size: 0.7rem;
+}
+/* ******************** */
 /* facilities page */
+/* ******************** */
 
 .facilities__wrapper {
   display: grid;
@@ -456,26 +509,28 @@ footer h6 {
 .facilities__card-container {
   grid-area: facilities;
   display: grid;
-  padding: 1rem 10rem;
+  /* padding: 1rem 10rem; */
+  max-width: 1000px;
+  margin: 1rem auto;
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
   gap: 10%;
   justify-content: center;
-  margin-bottom: 1rem;
 }
 .facilities__card--title {
   font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
   text-transform: uppercase;
 }
 
 .facilities__card--text {
   font-weight: 300;
-  font-size: 10px;
+  font-size: 0.6rem;
   line-height: 18px;
   letter-spacing: -0.2px;
 }
-
+.card__header-text {
+  padding: 0.2rem;
+}
 .cta {
   grid-area: cta;
   background: var(--primary-color);
@@ -488,15 +543,14 @@ footer h6 {
 }
 
 .cta__heading {
-  font-size: 75px;
-  line-height: 75px;
+  font-size: 4rem;
+  line-height: 4.1rem;
   text-transform: uppercase;
 }
 
 .cta__text {
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 20px;
+  font-size: 0.9rem;
+  line-height: 1.1rem;
   text-transform: uppercase;
   padding: 1rem 0;
 }
@@ -507,7 +561,7 @@ footer h6 {
 
 .information {
   grid-area: information;
-  padding: 2rem;
+  padding: 1rem;
 }
 .information__heading {
   font-size: 1rem;
@@ -526,7 +580,7 @@ footer h6 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 0.8rem;
 }
 
 .info-cards__heading {
@@ -542,19 +596,10 @@ footer h6 {
 
 .facilities__gallery {
   grid-area: gallery;
-  width: 1100px;
+  max-width: 1200px;
   margin: 1rem auto;
 }
-.facilities__gallery--top {
-  display: flex;
-}
-.facilities__gallery--top img {
-  width: 25rem;
-  border-radius: 5px;
-}
-.text-wrapper {
-  margin-left: 1rem;
-}
+
 .facilities__gallery--heading {
   font-size: 1.5rem;
   text-transform: uppercase;
@@ -568,15 +613,6 @@ footer h6 {
 .facilities__gallery---btm {
   display: flex;
   margin: 1rem 0;
-}
-
-.facilities__gallery---btm img {
-  width: 43rem;
-  border-radius: 5px;
-}
-
-.facilities__gallery---btm-right {
-  margin-left: 1rem;
 }
 
 .facilities__gallery--text-right {
@@ -595,8 +631,8 @@ footer h6 {
   margin-bottom: 2rem;
 }
 .newsletter__heading {
-  font-size: 36px;
-  line-height: 40px;
+  font-size: 2rem;
+  line-height: 2rem;
   text-transform: uppercase;
   mix-blend-mode: normal;
 }
@@ -607,18 +643,19 @@ footer h6 {
   border-radius: 12px;
   border: none;
 }
-
+/* ******************** */
 /* Booking page */
+/* ******************** */
 
 .booking__wrapper {
   width: 1440px;
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-areas:
     "header header header header"
     "hero hero hero hero"
     "container container container container"
-    "footer footer footer footer";
+    "footer footer footer footer"; */
 }
 .booking__hero {
   background: linear-gradient(to bottom, #b5aec04e, #c0b4d04e),
@@ -636,7 +673,6 @@ footer h6 {
   max-width: 250px;
   height: 250px;
   width: 100%;
-
   background: #fffbf7;
   border: 1px solid #dddbf7;
   grid-area: calendar;
@@ -696,11 +732,11 @@ footer h6 {
 }
 
 .booking__container {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
   height: 50vh;
   grid-area: container;
+  display: grid;
+  grid-template-columns: 0.2fr 0.5fr 1fr 0.2fr;
+  grid-template-areas: ". calendar bform .";
 }
 .booking__input {
   padding: 0.7rem 1.2rem;
@@ -714,6 +750,7 @@ footer h6 {
 
 .input__wrapper {
   padding: 2rem;
+  grid-area: bform;
 }
 .booking__col {
   display: flex;
@@ -728,8 +765,22 @@ footer h6 {
 }
 
 @media only screen and (max-width: 600px) {
+  .hero__heading {
+    font-size: 3rem;
+  }
+  .heading__section {
+    font-size: 1.5rem;
+    padding: 0.5rem 0;
+  }
+  .facilities__header {
+    font-size: 1.1rem;
+  }
+  .facilities__text,
+  .contact__text,
+  .contact__address-text {
+    font-size: 0.8rem;
+  }
   .wrapper {
-    max-width: 1440px;
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
     grid-template-areas:
@@ -743,6 +794,35 @@ footer h6 {
       "footer";
   }
 
+  .facilities__wrapper {
+    max-width: 1440px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "hero"
+      "facilities"
+      "cta"
+      "information"
+      "gallery"
+      "newsletter"
+      "footer";
+  }
+
+  footer {
+    grid-area: footer;
+    padding: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 0.5fr 0.5fr;
+    grid-template-areas:
+      "address links"
+      "about about"
+      "social social";
+    gap: 5%;
+  }
+  .footer__about-text {
+    padding: 0.5rem;
+  }
   .booking-bar {
     display: none;
   }
@@ -750,21 +830,33 @@ footer h6 {
   .hero {
     height: 22rem;
   }
+
+  .hero__subheading {
+    font-size: 0.7rem;
+  }
   .top,
   .bottom,
   .cards,
-  .contact {
+  .contact,
+  .top__facilities,
+  .bottom__facilities {
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
   }
 
   .top,
-  .bottom {
+  .bottom,
+  .bottom__facilities {
     grid-template-areas:
       "text-container"
-      "img-container ";
+      "img-container";
   }
-
+  .top__facilities {
+    grid-template-areas:
+      "img-container-first"
+      "text-container"
+      "img-container";
+  }
   .contact {
     padding: 0 1rem;
     grid-template-areas:
@@ -774,12 +866,169 @@ footer h6 {
 
   .contact__from--input,
   .contact__form--textarea {
-    width: 50%;
+    width: 80%;
   }
-  .facilities__img {
-    width: 100%;
+  .facilities {
+    text-align: center;
+  }
+  .facilities__img,
+  .facilities__img--large {
+    width: 20rem;
   }
   .facilities__header {
     text-align: center;
+  }
+
+  .facilities__hero--text {
+    font-weight: 600;
+    font-size: 0.65rem;
+    text-align: center;
+    line-height: 1rem;
+    padding: 0.5rem;
+  }
+
+  .facilities__hero--heading {
+    font-size: 2.1rem;
+  }
+
+  .facilities__card-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
+    margin: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .facilities__card--title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+  }
+
+  .cta__heading {
+    font-size: 2.2rem;
+    line-height: 2.2rem;
+  }
+  .cta__text {
+    font-size: 0.6rem;
+    line-height: 1rem;
+    padding: 0.6rem 0;
+  }
+
+  .cta {
+    background-position: 100% 25%;
+    background-size: 45%;
+    padding: 1.1rem;
+  }
+
+  .card__info {
+    padding: 0.5rem;
+  }
+  .info__cards--container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+  }
+
+  .info-cards__heading {
+    font-size: 0.6rem;
+  }
+
+  .info-cards__text {
+    font-size: 0.5rem;
+  }
+
+  .information__heading {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+    text-align: center;
+  }
+  .facilities__gallery--text {
+    padding: 0;
+  }
+  .facilities__gallery--heading {
+    font-size: 1rem;
+  }
+  .facilities__gallery--text-right {
+    margin-bottom: 0.5rem;
+  }
+  .facilities__gallery {
+    text-align: center;
+  }
+
+  .newsletter {
+    grid-area: newsletter;
+
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .newsletter__heading {
+    font-size: 1rem;
+    line-height: 1rem;
+  }
+  .newsletter__input {
+    padding: 0.8rem 1rem;
+    margin: 0.5rem;
+  }
+
+  .primary__btn {
+    padding: 0.7rem;
+    font-size: 0.6rem;
+    line-height: 0.6rem;
+  }
+  .gallery__img {
+    margin: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "gallery__img-one gallery__img-one"
+      "gallery__img-two gallery__img-three"
+      "gallery__img-two gallery__img-four"
+      "gallery__img-five gallery__img-six"
+      "gallery__img-seven gallery__img-seven"
+      "gallery__img-eight gallery__img-nine";
+  }
+  .gallery__img-one,
+  .gallery__img-two,
+  .gallery__img-seven {
+    height: 20rem;
+  }
+  .gallery__img-eight {
+    height: 9.4rem;
+  }
+
+  .menu-button-container {
+    display: flex;
+  }
+  .nav__links {
+    position: absolute;
+    top: 0;
+    margin-top: 50px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  #menu-toggle ~ .nav__links li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  #menu-toggle:checked ~ .nav__links li {
+    border: 1px solid #333;
+    height: 3em;
+    padding: 0.5em;
+  }
+  .nav__links > li {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: white;
+  }
+
+  .nav__button {
+    display: none;
   }
 }

@@ -12,7 +12,7 @@
 
 <body>
     <div class="facilities__wrapper ">
-        <header class="header">
+        <!-- <header class="header">
             <img src="./img/logo.png" alt="" class="header__logo">
             <nav>
                 <a href="index.html">
@@ -33,7 +33,7 @@
                 <button class="nav__button">BOOK A ROOM </a></button>
 
             </a>
-        </header>
+        </header> -->
 
         <section class="facilities__hero">
             <h1 class="facilities__hero--heading">A Human Recharging <br> Sanctuary</h1>
@@ -158,28 +158,38 @@
         </section>
 
         <section class="facilities__gallery">
-            <article class="facilities__gallery--top">
-                <img src="./img/07-night.jpg" alt="Room view">
-                <article class="text-wrapper">
+            <article class="top__facilities">
+
+                <div class="facilities__img--containerone">
+
+                    <img src="./img/07-night.jpg" alt="Room view" class="facilities__img">
+                </div>
+                <div class="facilities__container">
                     <h3 class="facilities__gallery--heading">SPACE & DESIGN</h3>
-                    <p class="facilities__gallery--text">The podtels are built to mimic our idea of a space ship that
+                    <p class="facilities__gallery--text">The podtels are built to mimic our idea of a space ship
+                        that
                         landed
                         on planet Mars, the next frontier
                         for
                         humans. How do
-                        we do that in limited space and without compromise? The podtels are highly organised with plenty
+                        we do that in limited space and without compromise? The podtels are highly organised with
+                        plenty
                         of
                         storage spaces and
                         organised modules that solve every need humans have in their daily lives.</p>
-                </article>
+                </div>
+                <div class="facilities__img--container">
+                    <img src="./img/06-night.jpg" alt="room view" class="facilities__img">
+                </div>
 
-                <img src="./img/06-night.jpg" alt="room view">
             </article>
 
 
-            <article class="facilities__gallery---btm">
-                <img src="./img/09-night.jpg" alt="outside view">
-                <article class="facilities__gallery---btm-right">
+            <article class="bottom__facilities">
+                <div class="facilities__img--container">
+                    <img src="./img/09-night.jpg" alt="outside view" class="facilities__img--large">
+                </div>
+                <article class=" facilities__container">
                     <h3 class="facilities__gallery--heading">AI POWERED</h3>
                     <p class="facilities__gallery--text-right">We built our own motherboard called the "HIVEMIND" that
                         connect
@@ -217,30 +227,32 @@
         </section>
 
         <footer>
-            <article class="footer__address">
+            <section class="footer__address">
                 <img src="./img/bonz.ai-logo-white-portrait.png" alt="" class="footer__logo">
-
                 <p>Bonz.ai Hotel</p>
                 <p>Address: Lorem ipsum dolor sit amet</p>
                 <p>Telephone: +46 012 345 67 89</p>
                 <p>Email: Contact@Bonz.ai</p>
-            </article>
+            </section>
 
 
-            <nav class="footer__nav">
+            <section class="footer__nav">
                 <h6>Useful links</h6>
-                <a href="#contact">
-                    <li class="footer__nav-items">Contact</li>
-                </a>
-                <a href="#gallery">
-                    <li class="footer__nav-items">Gallery</li>
+                <article class="footer__nav--items">
+                    <a href="#contact">
+                        <li class="footer__nav--links">Contact</li>
+                    </a>
+                    <a href="#gallery">
+                        <li class="footer__nav--links">Gallery</li>
 
-                </a>
-                <a href="facilities.html">
-                    <li class="footer__nav-items">Facilities</li>
-                </a>
-                <li class="footer__nav-items">Faq</li>
-            </nav>
+                    </a>
+                    <a href="facilities.html">
+                        <li class="footer__nav--links">Facilities</li>
+                    </a>
+                    <li class="footer__nav--links">Faq</li>
+                </article>
+
+            </section>
 
             <section class="copyright">
                 <article class="social-icons">
@@ -248,15 +260,16 @@
                     <i class="fa-brands fa-facebook"></i>
                     <i class="fa-brands fa-twitter"></i>
                     <i class="fa-brands fa-instagram"></i>
-                    <p>Copyright © 2022. All rights reserved</p>
+                    <p class="footer__copyright--text">
+                        Copyright © 2022. All rights reserved</p>
                 </article>
             </section>
             <article class="footer__about">
                 <h6>About</h6>
-                <p class="footer__about-text">Innovative autonomous luxury pod hotels for the <br>
-                    generation Y and Z. A
-                    sanctuary for travellers,
-                    <br>
+                <p class="footer__about-text">
+                    Innovative autonomous luxury pod hotels for the
+                    generation Y and Z. A sanctuary for travellers,
+
                     social media fanatics,
                     foodies, explorers and digital humans.
                 </p>
