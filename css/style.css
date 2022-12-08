@@ -381,10 +381,14 @@ footer h6,
   padding: 1.5rem;
 }
 
+.card__info,
+.facilities__card--text,
+.info-cards__text {
+  font-size: 0.6rem;
+}
 .card__info {
   padding: 1rem;
   font-weight: 300;
-  font-size: 0.6rem;
 }
 
 .facilities {
@@ -607,7 +611,6 @@ footer {
 
 .facilities__card--text {
   font-weight: 300;
-  font-size: 0.6rem;
   line-height: 18px;
   letter-spacing: -0.2px;
 }
@@ -665,7 +668,7 @@ footer {
 .info-cards__heading {
   font-size: 0.8rem;
 }
-
+.facilities__card--text,
 .info-cards__text {
   font-size: 0.6rem;
 }
