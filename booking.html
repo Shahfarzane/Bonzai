@@ -12,37 +12,35 @@
 
 <body>
     <div class="booking__wrapper">
-        <!-- <header class="header">
-            <img src="./img/logo.png" alt="" class="header__logo">
-            <nav>
+        <section class="header">
+            <div>
                 <a href="index.html">
-                    <li class="nav__items">Home</li>
+                    <img src="img/logo.png" alt="header__logo" class="header__logo">
                 </a>
-                <a href="facilities.html">
-                    <li class="nav__items">Facilities</li>
-                </a>
-                <a href="#contact">
-                    <li class="nav__items">Contact</li>
-                </a>
-                <a href="#gallery">
-                    <li class="nav__items">Gallery</li>
-                </a>
-                <li class="nav__items">FAQ</li>
-            </nav>
-            <a href="booking.html">
-                <button class="nav__button">BOOK A ROOM </a></button>
+            </div>
+            <input id="menu-toggle" type="checkbox" />
+            <label class='menu-button-container' for="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+                <div class='menu-button'></div>
+            </label>
+            <ul class="header__nav">
+                <li><a href="index.html"> Home </a></li>
+                <li><a href="facilities.html">Facilities </a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="index.html">FAQ</a> </li>
+            </ul>
+            <div class="hidden">
 
-            </a>
-        </header> -->
+                <a href="booking.html" class="nav__button">BOOK A ROOM </a>
+            </div>
+        </section>
 
         <article class="booking__hero">
             <h1 class="heading__section">Choose your experience</h1>
         </article>
-        <!-- <p class="booking__text">Check-in date</p> -->
         <section class="booking__container">
-
             <article class="calendar">
-
                 <header class="calendar__header">
                     <p>&#8249;</p>
                     <h3>December 2022</h3>
@@ -192,7 +190,7 @@
 
         <footer>
             <section class="footer__address">
-                <img src="./img/bonz.ai-logo-white-portrait.png" alt="" class="footer__logo">
+                <img src="img/bonz.ai-logo-white-portrait.png" alt="" class="footer__logo">
                 <p>Bonz.ai Hotel</p>
                 <p>Address: Lorem ipsum dolor sit amet</p>
                 <p>Telephone: +46 012 345 67 89</p>

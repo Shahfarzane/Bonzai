@@ -12,32 +12,30 @@
 
 <body>
     <div class="wrapper">
-        <header class="header">
-            <img src="./img/logo.png" alt="" class="header__logo">
+        <section class="header">
+            <div>
+                <a href="index.html">
+                    <img src="img/logo.png" alt="header__logo" class="header__logo">
+                </a>
+            </div>
             <input id="menu-toggle" type="checkbox" />
             <label class='menu-button-container' for="menu-toggle">
                 <i class="fa-solid fa-bars"></i>
+                <div class='menu-button'></div>
             </label>
-            <nav>
+            <ul class="header__nav">
+                <li><a href="index.html"> Home </a></li>
+                <li><a href="facilities.html">Facilities </a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="index.html">FAQ</a> </li>
+            </ul>
+            <div class="hidden">
 
+                <a href="booking.html" class="nav__button">BOOK A ROOM </a>
+            </div>
+        </section>
 
-                <a href="index.html">
-                    <li class="nav__items">Home</li>
-                </a>
-                <a href="facilities.html">
-                    <li class="nav__items">Facilities</li>
-                </a>
-                <a href="#contact">
-                    <li class="nav__items">Contact</li>
-                </a>
-                <a href="#gallery">
-                    <li class="nav__items">Gallery</li>
-                </a>
-                <li class="nav__items">FAQ</li>
-
-            </nav>
-            <a href="booking.html"> <button class="nav__button">BOOK A ROOM </button></a>
-        </header>
 
         <section class="hero">
             <h1 class="hero__heading">Bonz.ai</h1>
@@ -47,12 +45,11 @@
 
         <section class="booking-bar">
             <article class="form">
-                <input type="date" class="form__input" placeholder="CHECK IN DATE">
-                <input type="date" class="form__input" placeholder="CHECK OUT DATE">
+                <input type="date" class="form__input">
+                <input type="date" class="form__input">
                 <input type="text" class="form__input" placeholder="Adaults">
                 <input type="text" class="form__input" placeholder="ROOM">
-                <a href="booking.html">
-                    <button type="submit" class="cta__btn">BOOK NOW</button> </a>
+                <a href="booking.html" class="cta__btn"> BOOK NOW </a>
             </article>
         </section>
         <section class="gallery" id="gallery">
@@ -73,9 +70,9 @@
 
         <section class="rooms">
             <h2 class="heading__section">Our Rooms</h2>
-            <section class="cards">
+            <section class="cards__container">
                 <article class="card">
-                    <img src="./img/02-night.jpg" alt="" class="card__header">
+                    <img src="img/02-night.jpg" alt="room view at night" class="card__header">
                     <h3 class="card__header-text">SPACE room</h3>
                     <p class="card__info">55 sqm 592 sqft <br>
                         King bed<br>
@@ -89,7 +86,7 @@
 
                 </article>
                 <article class="card">
-                    <img src="./img/08-night.jpg" alt="card-header" class="card__header">
+                    <img src="img/08-night.jpg" alt="card-header" class="card__header">
                     <h3 class="card__header-text">The colony</h3>
                     <p class="card__info">
                         65 sqm 592 sqft <br>
@@ -105,7 +102,7 @@
 
                 </article>
                 <article class="card">
-                    <img src="./img/08-night.jpg" alt="card header" class="card__header">
+                    <img src="img/08-night.jpg" alt="card header" class="card__header">
                     <h3 class="card__header-text">bonz.ai experience</h3>
                     <p class="card__info">
                         55 sqm 592 sqft <br>
@@ -139,13 +136,15 @@
                     <button class="primary__btn">Read More</button>
                 </div>
                 <div class="facilities__img--container">
-                    <img src="./img/09-day.jpg" alt="" class="facilities__img">
+                    <img src="img/09-day.jpg" alt="view at night" class="facilities__img">
                 </div>
 
             </article>
 
             <article class="bottom">
-                <div class="facilities__img--container"><img src="./img/07-day.jpg" class="facilities__img"></div>
+                <div class="facilities__img--container">
+                    <img src="img/07-day.jpg" class="facilities__img" alt="view at day">
+                </div>
                 <div class="facilities__container">
                     <h3 class="facilities__header ">SPACE & DESIGN</h3>
                     <p class="facilities__text">Our rooms are designed to transport
@@ -172,17 +171,17 @@
                         Phone: +46 012 345 6789 <br>
                         Email: Contact@bonza.ai</p> <br>
                     <a href="#"> <strong>View on the map</strong> </a> <br>
-                    <img src="./img/google-maps-image-with-location-marker 1.png" alt="" class="gmaps">
+                    <img src="img/gmap.png" alt="google maps" class="gmaps">
                 </div>
             </article>
 
             <form action="" class="contact__from">
-                <label for="name" class="contact__label">name</label>
-                <input type="text" class="contact__from--input">
-                <label for="name" class="contact__label">email</label>
+                <label class="contact__label">name</label>
+                <input class="contact__from--input">
+                <label class="contact__label">email</label>
                 <input type="text" class="contact__from--input">
 
-                <label for="name" class="contact__label">message</label>
+                <label class="contact__label">message</label>
                 <textarea name="" id="" cols="30" rows="10" class="contact__form--textarea"></textarea>
                 <button type="submit" class="primary__btn margin">Send</button>
             </form>
@@ -194,7 +193,7 @@
 
         <footer>
             <section class="footer__address">
-                <img src="./img/bonz.ai-logo-white-portrait.png" alt="" class="footer__logo">
+                <img src="img/bonz.ai-logo-white-portrait.png" alt="logo" class="footer__logo">
                 <p>Bonz.ai Hotel</p>
                 <p>Address: Lorem ipsum dolor sit amet</p>
                 <p>Telephone: +46 012 345 67 89</p>
@@ -235,7 +234,6 @@
                 <p class="footer__about-text">
                     Innovative autonomous luxury pod hotels for the
                     generation Y and Z. A sanctuary for travellers,
-
                     social media fanatics,
                     foodies, explorers and digital humans.
                 </p>
