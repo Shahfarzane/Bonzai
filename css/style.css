@@ -648,14 +648,23 @@ footer h6 {
 /* ******************** */
 
 .booking__wrapper {
-  width: 1440px;
-  /* display: grid;
+  display: grid;
+  height: 100vh;
   grid-template-columns: repeat(4, 1fr);
   grid-template-areas:
     "header header header header"
     "hero hero hero hero"
     "container container container container"
-    "footer footer footer footer"; */
+    "footer footer footer footer";
+}
+.booking__container {
+  /* height: 50vh; */
+  grid-area: container;
+  display: grid;
+  grid-template-columns: 0.2fr 0.5fr 1fr;
+  grid-template-areas: ". calendar bform";
+
+  align-items: center;
 }
 .booking__hero {
   background: linear-gradient(to bottom, #b5aec04e, #c0b4d04e),
@@ -670,12 +679,13 @@ footer h6 {
   grid-area: hero;
 }
 .calendar {
-  max-width: 250px;
-  height: 250px;
+  max-width: 20rem;
+  height: 20rem;
   width: 100%;
   background: #fffbf7;
   border: 1px solid #dddbf7;
   grid-area: calendar;
+  margin: auto;
 }
 
 .calendar__header {
@@ -684,7 +694,7 @@ footer h6 {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-size: 14px;
+  font-size: 0.8rem;
   padding: 0.3rem;
 }
 
@@ -731,13 +741,6 @@ footer h6 {
   text-transform: uppercase;
 }
 
-.booking__container {
-  height: 50vh;
-  grid-area: container;
-  display: grid;
-  grid-template-columns: 0.2fr 0.5fr 1fr 0.2fr;
-  grid-template-areas: ". calendar bform .";
-}
 .booking__input {
   padding: 0.7rem 1.2rem;
   margin: 0.5rem 0;
@@ -795,7 +798,7 @@ footer h6 {
   }
 
   .facilities__wrapper {
-    max-width: 1440px;
+    /* max-width: 1440px; */
     grid-template-columns: 1fr;
     grid-template-areas:
       "header"
@@ -806,6 +809,33 @@ footer h6 {
       "gallery"
       "newsletter"
       "footer";
+  }
+
+  .booking__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    grid-template-areas:
+      "header"
+      "hero"
+      "container"
+      "container"
+      "footer";
+  }
+
+  .booking__container {
+    /* height: 100vh; */
+    grid-area: container;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "calendar"
+      "bform";
+    align-items: center;
+  }
+
+  .input__wrapper {
+    padding: 1rem;
   }
 
   footer {
@@ -1030,5 +1060,9 @@ footer h6 {
 
   .nav__button {
     display: none;
+  }
+
+  .booking__hero {
+    height: 13rem;
   }
 }
