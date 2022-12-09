@@ -737,7 +737,7 @@ footer {
 }
 
 .booking__container {
-  height: 50vh;
+  min-height: 50vh;
   grid-area: container;
   display: grid;
   grid-template-columns: 0.2fr 0.5fr 1fr;
