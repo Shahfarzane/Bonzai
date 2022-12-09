@@ -10,6 +10,8 @@ Abstract:xxx
 ## Figma Layout:
 
 [Figma Layout](https://www.figma.com/file/ku4kIdPmAxguXkRjxpkFEl/Group_Project?node-id=266%3A838&t=QMDZxqmuVBzyI7Z7-3)
+
+## Live Version
 [Live Version](https://shahfarzane.github.io/Bonzai/)
 
 ## Directory Hierarchy
